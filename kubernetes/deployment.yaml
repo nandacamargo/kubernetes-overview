@@ -14,8 +14,8 @@ spec:
         app: python-svc
     spec:
       containers:
-      - name: python-container
-        image: simple-flask-app:1.0
-        imagePullPolicy: Never
-        ports:
-        - containerPort: 5000
+        - name: python-container
+          image: simple-flask-app:1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
