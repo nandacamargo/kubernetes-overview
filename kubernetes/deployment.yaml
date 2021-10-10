@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-depl
+  namespace: python-test
+spec:
+  selector:
+    matchLabels:
+      app: python-svc
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: python-svc
+    spec:
+      containers:
+      - name: python-container
+        image: simple-flask-app:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
